@@ -10,7 +10,7 @@ body {
 nav {
     font-family: var(--nav-font);
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: var(--heading-font);
 }
 /* start heading  */
@@ -23,7 +23,7 @@ h1, h2, h3 {
 .container .heading span::after {
         content: "";
         position: absolute;
-        left: 120%;
+        left: 110%;
         top: 50%;
         transform: translateY(-50%);
         height: 2px;
@@ -64,7 +64,7 @@ nav .navbar-toggler {
 nav .navbar-toggler:focus {
     box-shadow: none;
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     nav .navbar-collapse {
         background-color: white;
     }
@@ -349,7 +349,7 @@ nav .navbar-toggler:focus {
 }
 #portfolio .image-container {
     width: 100%;
-    columns: 3;
+    column-count: 3;
     column-gap: 20px;
 }
 #portfolio .image-container .box {
@@ -358,12 +358,56 @@ nav .navbar-toggler:focus {
     break-inside: avoid;
     overflow: hidden;
 }
+/* #portfolio .image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: 10px;
+    grid-gap: 10px;
+}
+#portfolio .image-container .box {
+    grid-row: span 20;
+    overflow: hidden;
+} */
+/* #portfolio .image-container {
+    height: 1256px;
+}
+#portfolio .image-container .box {
+    width: calc((100% - 32px) / 3);
+    overflow: hidden;
+}
+@media (max-width: 1400px) {
+    #portfolio .image-container {
+        height: 1055px;
+    }
+}
+@media (max-width: 1200px) {
+    #portfolio .image-container {
+        height: 900px;
+    }
+}
+@media (max-width: 992px) {
+    #portfolio .image-container .box {
+        width: calc((100% - 16px) / 2);
+    }
+    #portfolio .image-container {
+        height: 1450px;
+    }
+}
+@media (max-width: 768px) {
+    #portfolio .image-container .box {
+        width: 100%; 
+    }
+    #portfolio .image-container {
+        height: auto;
+    }
+} */
+#portfolio .image-container .box img {
+    width: 100%;
+    display: block;
+} 
 #portfolio .image-container .box.hide {
     display: none;
 }
-#portfolio .image-container .box img {
-    width: 100%;
-} 
 #portfolio .image-container .box  .box-info  {
     transition: 0.4s ease-in-out;
     position: absolute;
@@ -395,12 +439,153 @@ nav .navbar-toggler:focus {
 }
 @media (max-width: 992px) {
     #portfolio .image-container {
-        columns: 2;
+        column-count: 2;
     }
 }
 @media (max-width: 768px) {
     #portfolio .image-container {
-        columns: 1;
+        column-count: 1;
     }
 }
 /* end portfolio section  */
+/* start testimonial section  */
+/* end testimonial section  */
+/* start pricing section  */
+#price {
+    padding-block: 60px;
+}
+#price .price-item {
+    background-color: #F5F5F5;
+    overflow: hidden;
+} 
+#price .price-item .active {
+    background-color: #EF6603;
+    color: white;
+}
+#price .price-item .special {
+    background-color: #EF6603;
+    color: white;
+    display: block;
+    position: absolute;
+    right: -68px;
+    top: 18px;
+    width: 200px;
+    padding-block: 2px;
+    font-size: 14px;
+    transform: rotate(45deg);
+}
+#price .price-info {
+    margin-inline: 1px;
+}
+#price .price-info h4::before {
+    content: "$";
+    position: relative;
+    top: -15px;
+    left: -5px;
+    font-size: 20px;
+}
+#price .price-info li {
+    font-size: 15px;
+}
+#price .price-item .button a {
+    background-color: #EF6603;
+    transition: 0.4s ease-in-out;
+}
+#price .price-item .button a:hover{
+    background-color: color-mix(in srgb, #EF6603, transparent 20%);
+}
+/* end pricing section  */
+/* start FAQ section  */
+#faq {
+    padding-block: 60px;
+}
+#faq .accordion-button:not(.collapsed) {
+    background-color: #EF6603;
+    color: white;
+}
+#faq .accordion-button:not(.collapsed)::after {
+    background-image: url(../image/down-arrow-backup-2-svgrepo-com.svg);
+}
+#faq .accordion-button:focus {
+    box-shadow: none;
+}
+@media (max-width: 576px) {
+    #faq .heading span::after {
+        display: none;
+    }
+}
+/* end FAQ section  */
+/* start team section  */
+#team {
+    padding-block: 60px;
+}
+#team .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#team .card .img-holder img {
+    width: 100%;
+}
+#team .card .img-holder ul {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+#team .card .img-holder:hover ul {
+    bottom: 15px;
+    opacity: 1;
+}
+#team .card .img-holder li {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+#team .card .img-holder li:hover {
+    background-color: #EF6603;
+}
+#team .card .img-holder li a {
+    color: color-mix(in srgb, #444444, transparent 40%);
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+}
+#team .card .img-holder li:hover a {
+    color: white;
+}
+#team .card .caption p {
+    font-size: 13px;
+    color: color-mix(in srgb, #444444, transparent 40%) ;
+}
+/* end team section  */
+/* start blog section  */
+#blog {
+    padding-block: 60px;
+}
+#blog .blog-item .img-holder img {
+    width: 100%;
+    display: block;
+}
+#blog .blog-item .blog-info a {
+    color: #2a2c39 ;
+    transition: 0.3s ease-in-out;
+}
+#blog .blog-item .blog-info a:hover {
+    color: #EF6603;
+}
+#blog .blog-item .person img {
+    width: 50px;
+    border-radius: 50%;
+}
+#blog .blog-item p {
+    color: color-mix(in srgb, #444444, transparent 40%);
+}
+#blog .blog-item p:last-child {
+    font-size: 14px;
+}
+/* end blog section  */

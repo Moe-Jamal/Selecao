@@ -43,7 +43,7 @@ document.addEventListener('scroll', () => {
 // portfolio active change and filter portfolio
 let myPort = document.querySelectorAll('.port-btn');
 let myGallery = document.querySelectorAll('.port-box');
-
+let galleryParent = document.querySelector('.image-container');
 const filterCards = ele => {
     document.querySelector('.active-btn').classList.remove('active-btn');
     ele.target.classList.add('active-btn');
@@ -54,6 +54,11 @@ const filterCards = ele => {
         if(gallery.dataset.name === ele.target.dataset.name || ele.target.dataset.name === "all") {
             gallery.classList.remove('hide');
         }
+        // if (ele.target.dataset.name !== "all") {
+        //     galleryParent.style.cssText = "flex-direction: row !important;"
+        // } else if (ele.target.dataset.name === "all") {
+        //     galleryParent.style.cssText = "flex-direction: column !important;"
+        // }
     })
 }
 
