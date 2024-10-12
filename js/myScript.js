@@ -31,12 +31,12 @@ boxes.forEach((box, index) => {
 });
 
 // Change Nav Bg-Color On scroll 
-const navLinks = document.getElementById('navBar');
+const navBar = document.getElementById('navBar');
 document.addEventListener('scroll', () => {
     if(window.scrollY > 0) {
-        navLinks.classList.add('scrollbg');
+        navBar.classList.add('scrollbg');
     } else {
-        navLinks.classList.remove('scrollbg');
+        navBar.classList.remove('scrollbg');
     }
 })
 
@@ -78,3 +78,70 @@ span.addEventListener('click', () => {
         behavior: "smooth",
     });
 })
+
+// testimonials slider 
+var swiper = new Swiper(".slide-content", {
+        slidesPerView: 3,
+        loop: true,
+        centerSlide: 'true',
+        fade: 'true',
+        speed: 800,
+        grabCursor: 'true',
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+    },
+    breakpoints:{
+        0: {
+            slidesPerView: 1,
+        },
+        992: {
+            slidesPerView: 2,
+        },
+        1200: {
+            slidesPerView: 3,
+        },
+    },
+});
+
+// Test 
+
+  // Select all sections and navbar links
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar-nav a');
+
+  // Function to remove 'active' class from all links
+  function removeActiveClass() {
+    navLinks.forEach(link => link.classList.remove('active-link'));
+  }
+
+  // Function to add 'active' class to the current link
+  function addActiveClass(id) {
+    const activeLink = document.querySelector(`.navbar-nav a[href="#${id}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active-link');
+    }
+  }
+
+  // Scroll event listener
+  window.addEventListener('scroll', () => {
+    let currentSection = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      // Check if the section is in the viewport
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    // Update the active class on the navbar
+    removeActiveClass();
+    addActiveClass(currentSection);
+  });
