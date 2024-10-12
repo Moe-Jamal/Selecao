@@ -27,16 +27,45 @@ h1, h2, h3, h4 {
         top: 50%;
         transform: translateY(-50%);
         height: 2px;
-        width: 100px;
+        width: 6.25rem;
         background-color: #EF6603;
     }
 .container .heading {
         margin-bottom: 50px;
     }
 /* end heading  */
+/* start scroll to top  */
+.top {
+    position: fixed;
+    bottom: -45px;
+    right: 15px;
+    background-color: #EF6603;
+    color: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 666;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+}
+.top:hover {
+    background-color:color-mix(in srgb, #EF6603 90%, white 15%) ;
+}
+.top i {
+    font-size: 15px;
+}
+.top.show {
+    bottom: 10px;
+    opacity: 1;
+}
+/* end scroll to top  */
 /* start navBar */
 nav {
-    z-index: 99999;
+    z-index: 9999;
     transition: 0.4s ease-in-out;
 }
 nav.scrollbg {
@@ -47,7 +76,7 @@ nav .nav-item a.active-link {
     background-color: #EF6603;
 }
 nav .nav-item a {
-    font-size: 14px;
+    font-size: .875rem;
 }
 nav .nav-item  .dropdown-item {
     transition: 0.3s ease-in-out;
@@ -81,7 +110,7 @@ nav .navbar-toggler:focus {
     }
     nav .nav-item  .dropdown-menu {
         background-color: #f8f8f8 !important;
-        margin-inline: 10px;
+        margin-inline: .625rem;
     }
     nav .navbar-nav {
         min-height: calc(100vh - 100px);
@@ -94,7 +123,7 @@ nav .navbar-toggler:focus {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     }
     nav .nav-item a {
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
     }
 }
@@ -110,7 +139,7 @@ nav .navbar-toggler:focus {
     background-color: #393B47;
     position: relative;
     overflow: hidden;
-    padding-top: 70px;
+    padding-top: 4.375rem;
 }
 #hero .carousel-inner {
     min-height: 85vh;
@@ -127,7 +156,7 @@ nav .navbar-toggler:focus {
     background-color: #EF6603 !important; 
 }
 #hero .carousel-inner .carousel-item .item h1 {
-    font-size: 48px ;
+    font-size: 3rem ;
 }
 #hero .carousel-inner .carousel-item p {
     width: 60%;
@@ -144,7 +173,7 @@ nav .navbar-toggler:focus {
 }
 @media (max-width: 768px) {
     #hero .carousel-inner .carousel-item .item h1 {
-        font-size: 40px;
+        font-size: 2.5rem;
     }
     #hero .carousel-inner .carousel-item p {
         width: 80% ;
@@ -156,7 +185,7 @@ nav .navbar-toggler:focus {
 }
 @media (max-width: 576px) {
     #hero .carousel-inner .carousel-item .item h1 {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 }
 /* svg waves  */
@@ -214,7 +243,8 @@ nav .navbar-toggler:focus {
 /* end hero-page  */
 /* strat about section  */
 #about {
-    padding: 60px 0;
+    padding-block: 3.75rem;
+    scroll-margin-top: 82px;
 }
 #about .about li i {
     color: #EF6603;
@@ -251,7 +281,7 @@ nav .navbar-toggler:focus {
     color: white;
 }
 #about .boxs-container .box p {
-    font-size: 18px ;
+    font-size: 1.125rem ;
 }
 #about .box-containt .caption i {
     color: #EF6603;
@@ -283,13 +313,13 @@ nav .navbar-toggler:focus {
         padding-left: 1.5rem !important;
     }
     #about .boxs-container .box i  {
-        font-size: 22px !important;
+        font-size: 1.375rem !important;
     }
 }
 /* end about section  */
 /* start call section */
 #call {
-    padding-block: 60px;
+    padding-block: 3.75rem;
     background-color: #393B47;
 }
 #call .container button {
@@ -303,9 +333,10 @@ nav .navbar-toggler:focus {
 /* start services section  */
 #services {
     padding-block: 60px;
+    scroll-margin-top: 82px;
 }
 #services .box .servs-caption {
-    padding: 60px 20px 50px 70px ;
+    padding: 3.75rem 1.25rem 3.125rem 4.375rem ;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: 0.3s ease-in-out;
@@ -318,26 +349,27 @@ nav .navbar-toggler:focus {
     color: #EF6603;
 }
 #services .box .servs-caption h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight:600;
-    margin-bottom: 15px;
+    margin-bottom: .9375rem;
     transition: 0.3s ease-in-out;
 }
 #services .box .servs-caption p {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: .875rem;
+    line-height: 1.5rem;
 } 
 #services .box .servs-caption i {
     position: absolute;
     top: 50%;
     left: -20px;
     transform: translateY(-50%);
-    font-size: 60px;
+    font-size: 3.75rem;
 }
 /* end services section  */
 /* start portfolio section  */
 #portfolio {
-    padding-block: 60px;
+    padding-block: 3.75rem;
+    scroll-margin-top: 82px;
 }
 #portfolio .buttons li button{
     transition: 0.3s ease-in-out;
@@ -350,11 +382,11 @@ nav .navbar-toggler:focus {
 #portfolio .image-container {
     width: 100%;
     column-count: 3;
-    column-gap: 20px;
+    column-gap: 1.25rem;
 }
 #portfolio .image-container .box {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     break-inside: avoid;
     overflow: hidden;
 }
@@ -427,10 +459,10 @@ nav .navbar-toggler:focus {
 ;
 }
 #portfolio .image-container .box  .box-info p {
-    font-size: 14px;
+    font-size: .875rem;
 }
 #portfolio .image-container .box  .box-info i {
-    font-size: 22px;
+    font-size: 1.375rem;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -452,7 +484,7 @@ nav .navbar-toggler:focus {
 /* end testimonial section  */
 /* start pricing section  */
 #price {
-    padding-block: 60px;
+    padding-block: 3.75rem;
 }
 #price .price-item {
     background-color: #F5F5F5;
@@ -469,23 +501,23 @@ nav .navbar-toggler:focus {
     position: absolute;
     right: -68px;
     top: 18px;
-    width: 200px;
-    padding-block: 2px;
-    font-size: 14px;
+    width: 12.5rem;
+    padding-block: .125rem;
+    font-size: .875rem;
     transform: rotate(45deg);
 }
 #price .price-info {
-    margin-inline: 1px;
+    margin-inline: .0625rem;
 }
 #price .price-info h4::before {
     content: "$";
     position: relative;
     top: -15px;
     left: -5px;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 #price .price-info li {
-    font-size: 15px;
+    font-size: .9375rem;
 }
 #price .price-item .button a {
     background-color: #EF6603;
@@ -497,7 +529,10 @@ nav .navbar-toggler:focus {
 /* end pricing section  */
 /* start FAQ section  */
 #faq {
-    padding-block: 60px;
+    padding-block: 3.75rem;
+}
+#faq .accordion-button {
+    z-index: 2;
 }
 #faq .accordion-button:not(.collapsed) {
     background-color: #EF6603;
@@ -517,7 +552,8 @@ nav .navbar-toggler:focus {
 /* end FAQ section  */
 /* start team section  */
 #team {
-    padding-block: 60px;
+    padding-block: 3.75rem;
+    scroll-margin-top: 82px;
 }
 #team .card {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -527,24 +563,24 @@ nav .navbar-toggler:focus {
 }
 #team .card .img-holder ul {
     position: absolute;
-    bottom: 30px;
+    bottom: 1.875rem;
     left: 0;
     right: 0;
     opacity: 0;
     transition: 0.4s ease-in-out;
 }
 #team .card .img-holder:hover ul {
-    bottom: 15px;
+    bottom: .9375rem;
     opacity: 1;
 }
 #team .card .img-holder li {
     background-color: rgba(255, 255, 255, 0.75);
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 4px;
+    border-radius: .25rem;
     transition: 0.3s ease-in-out;
 }
 #team .card .img-holder li:hover {
@@ -552,20 +588,21 @@ nav .navbar-toggler:focus {
 }
 #team .card .img-holder li a {
     color: color-mix(in srgb, #444444, transparent 40%);
-    font-size: 20px;
+    font-size: 1.25rem;
     transition: 0.3s ease-in-out;
 }
 #team .card .img-holder li:hover a {
     color: white;
 }
 #team .card .caption p {
-    font-size: 13px;
+    font-size: .8125rem;
     color: color-mix(in srgb, #444444, transparent 40%) ;
 }
 /* end team section  */
 /* start blog section  */
 #blog {
     padding-block: 60px;
+    scroll-margin-top: 82px;
 }
 #blog .blog-item .img-holder img {
     width: 100%;
@@ -579,13 +616,111 @@ nav .navbar-toggler:focus {
     color: #EF6603;
 }
 #blog .blog-item .person img {
-    width: 50px;
+    width: 3.125rem;
     border-radius: 50%;
 }
 #blog .blog-item p {
     color: color-mix(in srgb, #444444, transparent 40%);
 }
 #blog .blog-item p:last-child {
-    font-size: 14px;
+    font-size: .875rem;
 }
 /* end blog section  */
+/* start contact section */
+#contact {
+    padding-block: 3.75rem;
+    scroll-margin-top: 82px;
+}
+#contact .info  i {
+    width: 3.125rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #EF6603;
+    border-radius: 50%;
+    color: #EF6603;
+}
+#contact .info .adress ,
+#contact .info .call ,
+#contact .info .email  {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#contact .info .adress p,
+#contact .info .call a,
+#contact .info .email a {
+    font-size: .875rem;
+    color: color-mix(in srgb, #444444, transparent 10%);
+    text-decoration: none;
+}
+#contact form {
+    box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.1);
+}
+#contact form textarea {
+    height: 6.25rem;
+}
+#contact form button {
+    background-color: #EF6603;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+#contact form button:hover {
+    background-color: color-mix(in srgb, #EF6603, transparent 20%) ;
+}
+#contact form input:focus,
+#contact form textarea:focus {
+    box-shadow: none;
+    border: 1px solid #EF6603 ;
+}
+#contact form input::placeholder,
+#contact form textarea::placeholder{
+    color: color-mix(in srgb, #444444, transparent 40%) ;
+    font-size: .9375rem;
+}
+/* end contact section */
+/* start footer  */
+#footer {
+    background-color: #2A2C39;
+    padding-block: 1.875rem;
+}
+#footer .container > p {
+    font-size: .9375rem;
+    margin-bottom: 1.875rem;
+}
+#footer .container ul {
+    margin-bottom: 1.875rem;
+}
+#footer .container ul li {
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: #EF6603;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+#footer .container ul li:hover {
+    background-color: color-mix(in srgb, #EF6603, transparent 20%);
+}
+#footer .container ul li a {
+    color: white;
+    text-decoration: none;
+}
+#footer .container .copy-right {
+    padding-top: 1.875rem;
+    border-top: 1px solid #393B47;
+}
+#footer .container .copy-right p:nth-child(1) {
+    font-size: .9375rem;
+}
+#footer .container .copy-right p:nth-child(1) span {
+    font-size: .875rem;
+    font-weight: 700;
+}
+#footer .container .copy-right p:nth-child(2) {
+    font-size: .875rem;
+}
+#footer .container .copy-right p:nth-child(2) span {
+    font-size: .8125rem;
+    color: #EF6603;
+    cursor: pointer;
+}
+/* end footer  */

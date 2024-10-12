@@ -47,10 +47,8 @@ let galleryParent = document.querySelector('.image-container');
 const filterCards = ele => {
     document.querySelector('.active-btn').classList.remove('active-btn');
     ele.target.classList.add('active-btn');
-
     myGallery.forEach(gallery => {
         gallery.classList.add('hide');
-
         if(gallery.dataset.name === ele.target.dataset.name || ele.target.dataset.name === "all") {
             gallery.classList.remove('hide');
         }
@@ -63,3 +61,20 @@ const filterCards = ele => {
 }
 
 myPort.forEach(button => button.addEventListener('click', filterCards))
+
+// scroll to top button 
+let span = document.querySelector(".top");
+
+window.onscroll = function () {
+    if (this.scrollY >= 300) {
+        span.classList.add("show");
+    } else {
+        span.classList.remove("show");
+    }
+};
+span.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+})
