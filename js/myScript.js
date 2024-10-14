@@ -1,3 +1,9 @@
+AOS.init({
+    once: true,
+    duration: 800,
+    offset: 175,
+    easing: 'ease-in-out',
+});
 // Link Active changer 
 let myLink = document.querySelectorAll('.main-link');
 myLink.forEach(link => {

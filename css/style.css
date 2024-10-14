@@ -3,6 +3,7 @@
     --default-font: "Roboto",  system-ui;
     --heading-font: "Raleway",  sans-serif;
     --nav-font: "Poppins",  sans-serif;
+    --animate-delay: 0.5s;
 }
 body {
     font-family: var(--default-font);
