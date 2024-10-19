@@ -129,7 +129,8 @@ nav .navbar-toggler:focus {
         margin-inline: .625rem;
     }
     nav .navbar-nav {
-        min-height: calc(100vh - 100px);
+        height: calc(100vh - 100px);
+            overflow-y: auto;
     }
     nav .navbar-collapse {
         position: absolute;
