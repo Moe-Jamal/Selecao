@@ -38,13 +38,15 @@ boxes.forEach((box, index) => {
 
 // Change Nav Bg-Color On scroll 
 const navBar = document.getElementById('navBar');
-document.addEventListener('scroll', () => {
-    if(window.scrollY > 0) {
+function navChangeBG() {
+    if (window.scrollY > 0) {
         navBar.classList.add('scrollbg');
     } else {
         navBar.classList.remove('scrollbg');
     }
-})
+}
+document.addEventListener('scroll', navChangeBG);
+document.addEventListener('DOMContentLoaded', navChangeBG);
 
 // portfolio active change and filter portfolio
 let myPort = document.querySelectorAll('.port-btn');
@@ -64,6 +66,7 @@ const filterCards = ele => {
         //     galleryParent.style.cssText = "flex-direction: column !important;"
         // }
     })
+    AOS.refresh();
 }
 
 myPort.forEach(button => button.addEventListener('click', filterCards))
